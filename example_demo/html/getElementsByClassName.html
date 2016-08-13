@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementsByClassName</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var aLi = getElementsByClassName();
+            alert(aLi.length);
+            console.log(aLi);
+            function getElementsByClassName() {
+                var aEls = document.getElementsByTagName('*');
+                var arr = [];
+                for (var i = 0; i<aEls.length; i++) {
+                    if (aEls[i].className == 'li') {
+                        arr.push(aEls[i]);
+                    }
+                }
+                return arr;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>11111</li>
+            <li class="li">22222</li>
+            <li>33333</li>
+            <li class="li">44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+</body>
+</html>
