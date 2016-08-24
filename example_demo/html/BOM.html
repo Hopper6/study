@@ -23,6 +23,17 @@
             aInput[2].onclick = function () {
                 opener.close();
             }
+            /*
+                window.location : 地址
+                window.location.href = window.location内容
+                window.location.search = url问号(?)后面的内容
+                window.location.hash = url井号(#)后面的内容
+            */
+            aInput[3].onclick = function () {
+                alert(window.location);
+                alert(window.location.search);
+                alert(window.location.hash);
+            }
         }
     </script>
 </head>
@@ -30,5 +41,6 @@
     <input type="button" value="打开新窗口">
     <input type="button" value="关闭窗口">
     <input type="button" value="关闭新窗口">
+    <input type="button" value="显示url">
 </body>
 </html>
