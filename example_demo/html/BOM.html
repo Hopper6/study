@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>浏览器对象模型</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            padding: 10px;
+        }
+        #div div {
+            width: 90px;
+            height: 600px;
+        }
+    </style>
     <script type="text/javascript">
         window.onload = function () {
             var aInput = document.getElementsByTagName('input');
@@ -42,5 +54,8 @@
     <input type="button" value="关闭窗口">
     <input type="button" value="关闭新窗口">
     <input type="button" value="显示url">
+    <div id="box">
+        <div></div>
+    </div>
 </body>
 </html>
