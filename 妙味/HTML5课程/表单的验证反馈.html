@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单的验证反馈</title>
+</head>
+<body>
+<form>
+    <input type="text" required id="text">
+    <input type="email" required id="email">
+    <input type="text" pattern="\d{1,5}" id="pat">
+    <input type="submit">
+</form>
+<script>
+    var oTxt = document.getElementById('text');
+    var oEmail = document.getElementById('email');
+    var oPattern = document.getElementById('pat');
+    oTxt.addEventListener('invalid', fn, false);
+    oEmail.addEventListener('invalid', fn1, false);
+    oPattern.addEventListener('invalid', fn2, false)
+
+    function fn(ev) {
+        ev.preventDefault();
+        alert(this.validity.valid);     //如果验证不通过就弹出false，验证通过就直接跳过
+//        valueMissing:针对required属性，当输入的值为空的时候返回true,valid相对的返回false
+        alert(this.validity.valueMissing);
+    }
+
+    //        typeMismatch: 控件值和预期的不匹配，不匹配的时候返回true
+    function fn1() {
+        alert(this.validity.typeMismatch);
+    }
+
+    //  patternMismatch: 当用户输入的内容和预期的正则要求不一致的时候返回true
+    function fn2() {
+        alert(this.validity.patternMismatch);
+    }
+</script>
+</body>
+</html>
